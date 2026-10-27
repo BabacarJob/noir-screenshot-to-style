@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as BoutiqueRouteImport } from './routes/boutique'
+import { Route as CommandeRouteImport } from './routes/commande'
+import { Route as PanierRouteImport } from './routes/panier'
+import { Route as SuiviRouteImport } from './routes/suivi'
+import { Route as InfosPageRouteImport } from './routes/infos.$page'
+import { Route as PaiementReferenceRouteImport } from './routes/paiement.$reference'
+import { Route as ProduitSlugRouteImport } from './routes/produit.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoutiqueRoute = BoutiqueRouteImport.update({
+  id: '/boutique',
+  path: '/boutique',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommandeRoute = CommandeRouteImport.update({
+  id: '/commande',
+  path: '/commande',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanierRoute = PanierRouteImport.update({
+  id: '/panier',
+  path: '/panier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuiviRoute = SuiviRouteImport.update({
+  id: '/suivi',
+  path: '/suivi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfosPageRoute = InfosPageRouteImport.update({
+  id: '/infos/$page',
+  path: '/infos/$page',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaiementReferenceRoute = PaiementReferenceRouteImport.update({
+  id: '/paiement/$reference',
+  path: '/paiement/$reference',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProduitSlugRoute = ProduitSlugRouteImport.update({
+  id: '/produit/$slug',
+  path: '/produit/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commande': typeof CommandeRoute
+  '/panier': typeof PanierRoute
+  '/suivi': typeof SuiviRoute
+  '/infos/$page': typeof InfosPageRoute
+  '/paiement/$reference': typeof PaiementReferenceRoute
+  '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commande': typeof CommandeRoute
+  '/panier': typeof PanierRoute
+  '/suivi': typeof SuiviRoute
+  '/infos/$page': typeof InfosPageRoute
+  '/paiement/$reference': typeof PaiementReferenceRoute
+  '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/boutique': typeof BoutiqueRoute
+  '/commande': typeof CommandeRoute
+  '/panier': typeof PanierRoute
+  '/suivi': typeof SuiviRoute
+  '/infos/$page': typeof InfosPageRoute
+  '/paiement/$reference': typeof PaiementReferenceRoute
+  '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/boutique'
+    | '/commande'
+    | '/panier'
+    | '/suivi'
+    | '/infos/$page'
+    | '/paiement/$reference'
+    | '/produit/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/boutique'
+    | '/commande'
+    | '/panier'
+    | '/suivi'
+    | '/infos/$page'
+    | '/paiement/$reference'
+    | '/produit/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/boutique'
+    | '/commande'
+    | '/panier'
+    | '/suivi'
+    | '/infos/$page'
+    | '/paiement/$reference'
+    | '/produit/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  BoutiqueRoute: typeof BoutiqueRoute
+  CommandeRoute: typeof CommandeRoute
+  PanierRoute: typeof PanierRoute
+  SuiviRoute: typeof SuiviRoute
+  InfosPageRoute: typeof InfosPageRoute
+  PaiementReferenceRoute: typeof PaiementReferenceRoute
+  ProduitSlugRoute: typeof ProduitSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boutique': {
+      id: '/boutique'
+      path: '/boutique'
+      fullPath: '/boutique'
+      preLoaderRoute: typeof BoutiqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commande': {
+      id: '/commande'
+      path: '/commande'
+      fullPath: '/commande'
+      preLoaderRoute: typeof CommandeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panier': {
+      id: '/panier'
+      path: '/panier'
+      fullPath: '/panier'
+      preLoaderRoute: typeof PanierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suivi': {
+      id: '/suivi'
+      path: '/suivi'
+      fullPath: '/suivi'
+      preLoaderRoute: typeof SuiviRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infos/$page': {
+      id: '/infos/$page'
+      path: '/infos/$page'
+      fullPath: '/infos/$page'
+      preLoaderRoute: typeof InfosPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paiement/$reference': {
+      id: '/paiement/$reference'
+      path: '/paiement/$reference'
+      fullPath: '/paiement/$reference'
+      preLoaderRoute: typeof PaiementReferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produit/$slug': {
+      id: '/produit/$slug'
+      path: '/produit/$slug'
+      fullPath: '/produit/$slug'
+      preLoaderRoute: typeof ProduitSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  BoutiqueRoute: BoutiqueRoute,
+  CommandeRoute: CommandeRoute,
+  PanierRoute: PanierRoute,
+  SuiviRoute: SuiviRoute,
+  InfosPageRoute: InfosPageRoute,
+  PaiementReferenceRoute: PaiementReferenceRoute,
+  ProduitSlugRoute: ProduitSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
