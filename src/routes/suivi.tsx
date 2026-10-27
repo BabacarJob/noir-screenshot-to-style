@@ -6,7 +6,7 @@ import { formatFCFA, getOrder } from "@/services/api";
 import { DELIVERY_LABEL, PAYMENT_LABEL } from "@/lib/status";
 
 export const Route = createFileRoute("/suivi")({
-  validateSearch: (s: Record<string, unknown>): { ref?: string } => (typeof s.ref === "string" ? { ref: s.ref.slice(0, 40) } : {}),
+  validateSearch: (s: Record<string, unknown>): { ref?: string } => (typeof s["ref"] === "string" ? { ref: s["ref"].slice(0, 40) } : {}),
   head: () => ({
     meta: [
       { title: "Suivi de commande — Maison Noire" },

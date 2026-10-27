@@ -3,7 +3,7 @@
 import { mockProducts } from "@/data/mock-products";
 import type { CustomerInfo, CartItem, Order, Product } from "@/types/shop";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL as string | undefined;
+const BASE_URL = import.meta.env["VITE_API_BASE_URL"] as string | undefined;
 
 async function http<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
