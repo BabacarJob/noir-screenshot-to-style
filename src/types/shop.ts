@@ -18,7 +18,7 @@ export interface Product {
   images: string[];
   colors: string[];
   variants: ProductVariant[];
-  isNew?: boolean;
+  isNew?: boolean | undefined;
 }
 
 export interface CartItem {

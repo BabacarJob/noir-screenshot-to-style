@@ -30,7 +30,7 @@ function ProductPage() {
   const { data: p } = useSuspenseQuery(productQuery(slug));
   const { add } = useCart();
   const [img, setImg] = useState(0);
-  const [color, setColor] = useState(p!.colors[0]);
+  const [color, setColor] = useState<string>(p?.colors[0] ?? "");
   const [size, setSize] = useState<string | null>(null);
   const [added, setAdded] = useState(false);
   if (!p) return null;
@@ -40,7 +40,7 @@ function ProductPage() {
 
   const onAdd = () => {
     if (!variant || variant.stock === 0) return;
-    add({ productId: p.id, variantId: variant.id, name: p.name, size: variant.size, color, price: p.price, image: p.images[0], quantity: 1 });
+    add({ productId: p.id, variantId: variant.id, name: p.name, size: variant.size, color, price: p.price, image: p.images[0] ?? "", quantity: 1 });
     setAdded(true);
   };
 
