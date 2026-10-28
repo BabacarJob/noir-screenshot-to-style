@@ -17,7 +17,7 @@ const SIZES: Size[] = ["S", "M", "L", "XL", "TU"];
 
 export const Route = createFileRoute("/boutique")({
   validateSearch: (s: Record<string, unknown>): { cat?: Category } =>
-    CATS.some((c) => c.id === s.cat) ? { cat: s.cat as Category } : {},
+    CATS.some((c) => c.id === s["cat"]) ? { cat: s["cat"] as Category } : {},
   head: () => ({
     meta: [
       { title: "Boutique — Maison Noire" },
